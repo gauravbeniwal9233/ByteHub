@@ -1,0 +1,232 @@
+<div class="container border rounded p-4">
+    <h2 class="border rounded">Contact Us</h2>
+
+    <form [formGroup]="contactUsForm">
+        <!-- First and Last Name  -->
+        <div class="row mt-2 mb-3">
+            <div class="row mt-2 mb-3">
+                <div class="col-auto">
+                    <label>
+                        <strong class="d-block text-primary fw-600 lh-2">Name<span class="text-danger">*</span></strong>
+                    </label>
+                </div>
+            </div>
+            <div class="row mt-2 mb-3">
+                <div class="col">
+                    <input type="text" class="form-control" formControlName="firstName" placeholder="First name">
+                    <span *ngIf="contactUsForm.get('firstName').touched && !contactUsForm.get('firstName').valid"
+                        class="text-danger">First Name is Required !!</span>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" formControlName="lastName" placeholder="Last name">
+                    <span *ngIf="contactUsForm.get('lastName').touched && !contactUsForm.get('lastName').valid"
+                        class="text-danger">Last Name is Required !!</span>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Primary Role  -->
+        <div class="row mt-2 mb-3">
+            <div class="row mt-2 mb-3">
+                <div class="col-auto">
+                    <label for="name">
+                        <strong class="d-block text-primary fw-600 lh-2">Primary Role<span
+                                class="text-danger">*</span></strong>
+                    </label>
+                </div>
+            </div>
+            <div class="row mt-2 mb-3">
+                <div class="col-auto">
+                    <select class="form-select" formControlName="primaryRole">
+                        <option [value]="null" selected disabled> -- Select --</option>
+                        <option>Front End</option>
+                        <option>Back End</option>
+                        <option>Database</option>
+                        <option>Cloud</option>
+                        <option>Other</option>
+                    </select>
+                    <span *ngIf="contactUsForm.get('primaryRole').touched && !contactUsForm.get('primaryRole').valid"
+                        class="text-danger">Primary Role is Required !!</span>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Technologies  -->
+        <div class="row">
+            <div class="row mt-2 mb-3">
+                <div class="col-auto">
+                    <label for="name">
+                        <strong class="d-block text-primary fw-600 lh-2">Which technolgies(s) are you currently studying
+                            for? (select all that apply)<span class="text-danger"></span></strong>
+                    </label>
+                </div>
+            </div>
+            <!-- Frontend Section -->
+            <div class="row mt-2 mb-3">
+                <div class="col-auto">
+                    <label for="name">
+                        <strong class="d-block fw-600 lh-2">Front End</strong>
+                    </label>
+                </div>
+            </div>
+            <div class="col-auto">
+                <input class="form-check-input" type="checkbox" value="Angular"
+                    (change)="onCheckboxChange($event, 'Angular')">
+                <label class="form-check-label">
+                    Angular
+                </label>
+            </div>
+            <div class="col-auto">
+                <input class="form-check-input" type="checkbox" value="React"
+                    (change)="onCheckboxChange($event, 'React')">
+                <label class="form-check-label">
+                    React
+                </label>
+            </div>
+            <div class="col-auto">
+                <input class="form-check-input" type="checkbox" value="Vue" (change)="onCheckboxChange($event, 'Vue')">
+                <label class="form-check-label">
+                    Vue
+                </label>
+            </div>
+
+            <!-- Backend Section -->
+            <div class="row mt-2 mb-3">
+                <div class="col-auto">
+                    <label for="backend">
+                        <strong class="d-block fw-600 lh-2">Back End</strong>
+                    </label>
+                </div>
+            </div>
+            <div class="col-auto">
+                <input class="form-check-input" type="checkbox" value="Node.js"
+                    (change)="onCheckboxChange($event, 'Node.js')">
+                <label class="form-check-label">Node.js</label>
+            </div>
+            <div class="col-auto">
+                <input class="form-check-input" type="checkbox" value="Django"
+                    (change)="onCheckboxChange($event, 'Django')">
+                <label class="form-check-label">Django</label>
+            </div>
+            <div class="col-auto">
+                <input class="form-check-input" type="checkbox" value="Spring Boot"
+                    (change)="onCheckboxChange($event, 'Spring Boot')">
+                <label class="form-check-label">Spring Boot</label>
+            </div>
+
+            <!-- Database Section -->
+            <div class="row mt-2 mb-3">
+                <div class="col-auto">
+                    <label for="database">
+                        <strong class="d-block fw-600 lh-2">Database</strong>
+                    </label>
+                </div>
+            </div>
+            <div class="col-auto">
+                <input class="form-check-input" type="checkbox" value="MySQL"
+                    (change)="onCheckboxChange($event, 'MySQL')">
+                <label class="form-check-label">MySQL</label>
+            </div>
+            <div class="col-auto">
+                <input class="form-check-input" type="checkbox" value="PostgreSQL"
+                    (change)="onCheckboxChange($event, 'PostgreSQL')">
+                <label class="form-check-label">PostgreSQL</label>
+            </div>
+            <div class="col-auto">
+                <input class="form-check-input" type="checkbox" value="MongoDB"
+                    (change)="onCheckboxChange($event, 'MongoDB')">
+                <label class="form-check-label">MongoDB</label>
+            </div>
+
+            <!-- Cloud Section -->
+            <div class="row mt-2 mb-3">
+                <div class="col-auto">
+                    <label for="cloud">
+                        <strong class="d-block fw-600 lh-2">Cloud</strong>
+                    </label>
+                </div>
+            </div>
+            <div class="col-auto">
+                <input class="form-check-input" type="checkbox" value="AWS" (change)="onCheckboxChange($event, 'AWS')">
+                <label class="form-check-label">AWS</label>
+            </div>
+            <div class="col-auto">
+                <input class="form-check-input" type="checkbox" value="Azure"
+                    (change)="onCheckboxChange($event, 'Azure')">
+                <label class="form-check-label">Azure</label>
+            </div>
+            <div class="col-auto">
+                <input class="form-check-input" type="checkbox" value="GCP" (change)="onCheckboxChange($event, 'GCP')">
+                <label class="form-check-label">GCP</label>
+            </div>
+        </div>
+
+
+
+        <!-- Email and Phone Number -->
+        <div class="row mt-2 mb-3">
+            <div class="col-md-6 mb-3">
+                <div class="row mt-2 mb-3">
+                    <div class="col-auto">
+                        <label class="me-2">
+                            <strong class="d-block text-primary fw-600 lh-2">Email<span
+                                    class="text-danger">*</span></strong>
+                        </label>
+                    </div>
+                </div>
+                <input type="email" class="form-control" placeholder="Enter your email" formControlName="email">
+                <span *ngIf="contactUsForm.get('email').touched && !contactUsForm.get('email').valid"
+                    class="text-danger">Email is Required !!</span>
+            </div>
+
+            <div class="col-md-6">
+                <div class="row mt-2 mb-3">
+                    <div class="col-auto">
+                        <label class="me-2">
+                            <strong class="d-block text-primary fw-600 lh-2">Phone Number<span
+                                    class="text-danger">*</span></strong>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-text">+1</span>
+                    <input type="tel" class="form-control" placeholder="Enter your phone number"
+                        formControlName="phoneNo" mask="(XXX) XXX-XXXX">
+
+                </div>
+                <span *ngIf="contactUsForm.get('phoneNo').touched && !contactUsForm.get('phoneNo').valid"
+                    class="text-danger">Phone Number is Required !!</span>
+
+            </div>
+        </div>
+
+
+
+
+        <!-- Comments  -->
+        <div class="col-12 mt-2 mb-3">
+            <div class="row">
+                <div class="col-auto">
+                    <label for="phone" class="me-2">
+                        <strong class="d-block text-primary fw-600 lh-2">Comments</strong>
+                    </label>
+                </div>
+            </div>
+            <textarea class="form-control" rows="3" placeholder="Enter text here..."
+                formControlName="comment"></textarea>
+        </div>
+
+
+
+        <!-- Submit Button  -->
+        <div class="d-flex justify-content-end mt-3">
+            <button class="btn btn-primary" type="submit" (click)="submit(contactUsForm)"
+                [disabled]="contactUsForm.invalid">Submit form</button>
+        </div>
+    </form>
+</div>

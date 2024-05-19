@@ -1,0 +1,19 @@
+<h2>Book Component</h2>
+
+
+<h3>Show Books</h3>
+
+<table class="table table-striped-columns">
+    <tr>
+        <th>Book ID</th>
+        <th>Book Name</th>
+        <th>Book Details</th>
+    </tr>
+    <tr *ngFor="let book of myAllBooks">
+        <td>{{book.id}}</td>
+        <td>{{book.name}}</td>
+        <td>
+            <a class="link-primary" [routerLink]="['/bookdetails',book.id]">Details</a>
+        </td>
+    </tr>
+</table>

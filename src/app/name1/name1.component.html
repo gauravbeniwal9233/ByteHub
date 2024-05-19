@@ -1,0 +1,7 @@
+<h2>Parent Component</h2>
+
+<input type="text" placeholder="Enter Name" #nameInput (keyup.enter)="updateName(nameInput.value); nameInput.value=''">
+
+<app-name2 [names]="names"></app-name2>
+
+<app-studentmarks></app-studentmarks>

@@ -1,0 +1,8 @@
+<h2>Student Marks</h2>
+<ul class="list-group list-group-flush">
+    <li *ngFor="let student of students">
+      <ng-container *ngIf="student.marks > 300">
+        Id: {{ student.Id }} | Name: {{ student.name }} | Marks: {{ student.marks }}
+      </ng-container>
+    </li>
+  </ul>
