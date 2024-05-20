@@ -11,6 +11,7 @@ import { BookdetailsComponent } from './book/bookdetails/bookdetails.component';
 import { authguardGuard } from './auth/auth.guard';
 import { authChildGuard } from './auth/auth-child.guard';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DsaComponent } from './components/dsa/dsa.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -28,6 +29,7 @@ export const routes: Routes = [
             },
             { path: 'book', component: BookComponent, title: 'Books', canActivate:[authguardGuard] }, //, canActivate:[authguardGuard]
             { path: 'bookdetails/:id', component: BookdetailsComponent, title: 'Books Details', canActivate:[authguardGuard] }, //, canActivate:[authguardGuard]
+            { path: 'dsa', component: DsaComponent, title: 'DSA', canActivate:[authguardGuard] }, //, canActivate:[authguardGuard]
 
         ]
     },
