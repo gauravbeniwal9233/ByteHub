@@ -1,0 +1,19 @@
+/* Ensure the footer sticks to the bottom */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+}
+
+footer {
+    width: 100%;
+    bottom: 0;
+}
