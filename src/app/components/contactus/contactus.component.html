@@ -12,12 +12,12 @@
                 </div>
             </div>
             <div class="row mt-2 mb-3">
-                <div class="col">
+                <div class="col-2">
                     <input type="text" class="form-control" formControlName="firstName" placeholder="First name">
                     <span *ngIf="contactUsForm.get('firstName').touched && !contactUsForm.get('firstName').valid"
                         class="text-danger">First Name is Required !!</span>
                 </div>
-                <div class="col">
+                <div class="col-2">
                     <input type="text" class="form-control" formControlName="lastName" placeholder="Last name">
                     <span *ngIf="contactUsForm.get('lastName').touched && !contactUsForm.get('lastName').valid"
                         class="text-danger">Last Name is Required !!</span>
@@ -169,7 +169,7 @@
 
         <!-- Email and Phone Number -->
         <div class="row mt-2 mb-3">
-            <div class="col-md-6 mb-3">
+            <div class="col-md-3 mb-3">
                 <div class="row mt-2 mb-3">
                     <div class="col-auto">
                         <label class="me-2">
@@ -183,7 +183,7 @@
                     class="text-danger">Email is Required !!</span>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-3">
                 <div class="row mt-2 mb-3">
                     <div class="col-auto">
                         <label class="me-2">
